@@ -5,15 +5,12 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-if [[ "$1" == *.asm ]]; then
-    BASE_NAME="${1%.asm}"
-else
-    BASE_NAME="$1"
-fi
+DIR="$(dirname $1)"
+BASE_NAME="$(basename -s .asm "$1")"
 
-ASM_FILE="${BASE_NAME}.asm"
-OBJ_FILE="${BASE_NAME}.obj"
-BIN_FILE="${BASE_NAME}.bin"
+ASM_FILE="${DIR}/${BASE_NAME}.asm"
+OBJ_FILE="${DIR}/${BASE_NAME}.obj"
+BIN_FILE="${DIR}/${BASE_NAME}.bin"
 
 if [ ! -f "$ASM_FILE" ]; then
     echo "$ASM_FILE does not exist."
