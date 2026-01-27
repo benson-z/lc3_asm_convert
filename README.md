@@ -7,5 +7,5 @@ This script assumes that you have [lc3tools](https://lumetta.web.engr.illinois.e
 ## Usage
 
 ```sh
-curl -sL https://xk.ax/lc3 | sh -s -- <file>
+curl -sL https://raw.githubusercontent.com/benson-z/lc3_asm_convert/refs/heads/main/lc3_asm_convert.sh | sh -s -- <file>
 ```
